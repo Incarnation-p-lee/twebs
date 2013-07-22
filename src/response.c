@@ -65,7 +65,6 @@ response(int fd)
 				"You have no right."); 
       return;
     }
-    fprintf(stdout, "==>fn %s, size %d\n", filen, (int)sbuf.st_size);
     server_static(fd, filen, sbuf.st_size);
   }
   else
@@ -95,7 +94,6 @@ read_request_head(struct sys_bio *bio)
 		if(!system_readline(bio, buf, MAX_LINE))
       break;
   }
-  fprintf(stdout, "skipped header.\n");  
   return;
 }
 

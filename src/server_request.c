@@ -33,10 +33,8 @@ server_static(int fd, char *filename, int size)
   if(NULL == src)
     error_handle("mmap");
 
-  system_write(fd, src, size);
-  
-  fprintf(stdout, "Sent %s.\n", filename);
   close(fd_src);
+  system_write(fd, src, size);
   munmap(src, size);
 
   return;

@@ -39,7 +39,6 @@ main(int argc, char **argv)
     fd_connected = accept(fd_listen, 
       (struct sockaddr*)&client_addr, 
       &client_len);
-    fprintf(stdout, "client connected..\n");
     response(fd_connected);
     close(fd_connected);
   }

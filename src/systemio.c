@@ -88,6 +88,11 @@ system_readbuf(struct sys_bio *bio,
   return read_size;
 }
 
+/*--------------------------------------------------*/
+/*-When write buf, client may close the connection.-*/
+/*-Then next write you may receive EPIPE.          -*/
+/*-Handle the signal EPIPE, make server works well.-*/
+/*--------------------------------------------------*/
 int 
 system_write(int fd, char *buf, int len)
 {
