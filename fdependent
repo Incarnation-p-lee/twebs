@@ -1,1 +1,9 @@
+handler.o: handler.c inc/include.h inc/def.h inc/handler.h \
+ src/error_handle.c src/client_err_handle.c
+ioput.o: ioput.c inc/include.h inc/def.h inc/ioput.h src/systemio.c
 main.o: main.c inc/include.h inc/def.h inc/var.h inc/external.h
+server.o: server.c inc/include.h inc/def.h inc/server.h src/response.c \
+ src/server_request.c
+textual.o: textual.c inc/include.h inc/def.h inc/textual.h \
+ src/uri_parser.c
+net.o: net.c inc/include.h inc/def.h inc/net.h src/net_init.c
